@@ -1,6 +1,6 @@
 
 const socket = io ('http://localhost:7000');
-
+require('dotenv').config();
 const form = document.getElementById('send-con');
 const messageinput = document.getElementById('messageinp')
 const messageContainer = document.querySelector(".container")
@@ -25,6 +25,7 @@ form.addEventListener('submit',(e)=>{
     messageinput.value =''
 })
 
+const PORT =process.env.PORT || 7000;
 
 const name = prompt("Enter your name to join");
 socket.emit('new-user-joined', name)
