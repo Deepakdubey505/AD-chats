@@ -26,6 +26,7 @@ form.addEventListener('submit',(e)=>{
 })
 
 const PORT =process.env.PORT || 7000;
+Expose 3306
 
 const name = prompt("Enter your name to join");
 socket.emit('new-user-joined', name)
